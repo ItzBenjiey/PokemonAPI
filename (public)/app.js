@@ -1,4 +1,6 @@
-// const
+//https://www.youtube.com/watch?v=wXjSaZb67n8&t=595s used this video to make JS file
+
+// const ,grabs HTML file 
 const mainScreen = document.querySelector('.main-screen');
 const pokeName = document.querySelector('.poke-name');
 const pokeId = document.querySelector('.poke-id');
@@ -59,7 +61,7 @@ const fetchPokeList = url => {
       }
     });
 };
-
+//API Data Fetching
 const fetchPokeData = id => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then(res => res.json())
@@ -87,7 +89,7 @@ const fetchPokeData = id => {
       pokeBackImage.src = data['sprites']['back_default'] || '';
     });
 };
-
+//button click responses
 const handleLeftButtonClick = () => {
   if (prevUrl) {
     fetchPokeList(prevUrl);
